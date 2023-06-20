@@ -24,13 +24,13 @@ function setup() {
   // fill(255);
   // noStroke();
   // text('train', 100, 200);
-  textInput = prompt("Please enter your name:");
+  getUserInput();
 
   createPointsByText(textInput);
 }
 async function getUserInput() {
   var input = prompt("Please enter your name:");
-  if (input.length > 0 && input.length < 15) textInput = input;
+  if (input.length > 0 && input.length < 25) textInput = input;
 }
 function draw() {
   background(51);
@@ -66,6 +66,7 @@ function createPointsByText(text) {
     fontSize--;
     textSize(fontSize);
   }
+  fontSize--;
 
   let points = font.textToPoints(text, 0, 0, fontSize, {
     sampleFactor: 0.25,
